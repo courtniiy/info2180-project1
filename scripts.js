@@ -24,8 +24,7 @@ function subscription(){
         else{
             msg.innerHTML = 'Please enter a valid email address.';
             }
-
-        }
+    }
 
     btn.addEventListener('click', (event) => {
         subsribe();
