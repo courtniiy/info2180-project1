@@ -5,29 +5,33 @@ window.onload = function(){
 function subscription(){
     
     let button = document.querySelector('form');
-    let btn = button.getElementsByTagName('button');
-    let msg = document.getElementsByClassName('message');
-    let emailAddress = document.getElementsByTagName('input').value
-
-
-    btn.onclick =  function() {subsribe()};
-
-    function subsribe(){
-        alert('is this thing on??')
-            function validateEmail(email){
-                let regex = /\S+@\S+\.\S+/;
-                return regex.test(email);
-                    }
+    let btn = button.getElementsByTagName('button')[0];
+    let msg = document.getElementsByClassName('message')[0];
     
-    if (validateEmail(emailAddress== true)) {
-            msg.innerText = 'Thank you! Your email address' + emailAddress + 'has been added to our mailing list' ;
+
+   function subsribe(){
+        let emailAddress = document.getElementById("email").value;
+
+        function validateEmail(email){
+        let regex = /\S+@\S+\.\S+/;
+        return regex.test(email);
+                }
+    
+        if (validateEmail(emailAddress) == true) {
+        msg.innerHTML = 'Thank you! Your email address ' + emailAddress + ' has been added to our mailing list!' ;
+     }
+
+        else{
+            msg.innerHTML = 'Please enter a valid email address.';
+            }
+
+        }
+
+    btn.addEventListener('click', (event) => {
+        subsribe();
+        event.preventDefault();
         
-    }
-
-    else{
-
-        msg.innerText = 'Please enter a valid email address'
-    }
-
-    }
+    })   
+    
+    
 }

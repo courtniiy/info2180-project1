@@ -230,6 +230,11 @@ article{
     background-color: #5A67D8;
 }
 
+.message{
+    text-align: center;
+   
+}
+
 .newsletter form{
     display: flex;
     grid-column: 1/3;
